@@ -11,9 +11,9 @@ const TextField = (props: Props) => {
   return <Textarea placeholder={placeholder} onChange={onChange}></Textarea>;
 };
 
-const Textarea = styled.textarea({
-  flex: 1,
-  resize: "none",
-});
+const Textarea = styled.textarea`
+  flex: 1;
+  resize: "none";
+`;
 
 export default TextField;

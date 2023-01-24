@@ -16,6 +16,6 @@ const Button = (props: Props) => {
   );
 };
 
-const Wrapper = styled.div({});
+const Wrapper = styled.div``;
 
 export default Button;

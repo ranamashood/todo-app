@@ -28,15 +28,15 @@ const Content = () => {
   );
 };
 
-const Wrapper = styled.div({
-  height: "100vh",
-  display: "flex",
-});
+const Wrapper = styled.div`
+  height: 100vh;
+  display: flex;
+`;
 
-const NoteContainer = styled.div({
-  flex: 3,
-  display: "flex",
-  backgroundColor: "blue",
-});
+const NoteContainer = styled.div`
+  flex: 3;
+  display: flex;
+  background-color: blue;
+`;
 
 export default Content;

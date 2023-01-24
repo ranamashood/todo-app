@@ -39,11 +39,11 @@ const AddNote = () => {
   );
 };
 
-const Wrapper = styled.div({
-  flex: 1,
-  display: "flex",
-  flexDirection: "column",
-  backgroundColor: "green",
-});
+const Wrapper = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: green;
+`;
 
 export default AddNote;

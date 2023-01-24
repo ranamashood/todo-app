@@ -11,8 +11,8 @@ const TextInput = (props: Props) => {
   return <Input type="text" placeholder={placeholder} onChange={onChange} />;
 };
 
-const Input = styled.input({
+const Input = styled.input`
   // backgroundColor: "transparent",
-});
+`;
 
 export default TextInput;

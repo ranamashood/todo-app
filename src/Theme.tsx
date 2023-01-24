@@ -1,9 +1,8 @@
-import { ThemeProvider } from "styled-components";
-import { ThemeInterface } from "./models";
+import { ThemeInterface, ThemeProvider } from "styled-components";
 
 const theme: ThemeInterface = {
   colors: {
-    main: "hsl(180, 6%, 50%)",
+    primary: "hsl(180, 6%, 50%)",
     secondary: "hsl(180, 6%, 60%)",
   },
   fontSizes: {
