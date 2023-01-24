@@ -1,14 +1,15 @@
-import React from "react";
+import React, { ChangeEventHandler } from "react";
 import styled from "styled-components";
 
 interface Props {
   placeholder: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const TextInput = (props: Props) => {
-  const { placeholder } = props;
+  const { placeholder, onChange } = props;
 
-  return <Input type="text" placeholder={placeholder} />;
+  return <Input type="text" placeholder={placeholder} onChange={onChange} />;
 };
 
 const Input = styled.input({

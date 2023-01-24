@@ -12,6 +12,10 @@ const Content = () => {
     setIsAddNote(!isAddNote);
   };
 
+  const addNoteHandler = () => {
+    setNotes([{ title: "hello", noteDescription: "note" }, ...notes]);
+  };
+
   return (
     <Wrapper>
       <Sidebar

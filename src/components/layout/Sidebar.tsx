@@ -11,12 +11,6 @@ interface Props {
 
 const Sidebar = (props: Props) => {
   const { notes, setNotes, toggleIsAddNote } = props;
-  const [newNote, setNewNote] = useState<NoteInterface>();
-
-  const addNoteHandler = () => {
-    // setNewNote({ title: "hello", noteDescription: "note" });
-    setNotes([{ title: "hello", noteDescription: "note" }, ...notes]);
-  };
 
   return (
     <Wrapper>
