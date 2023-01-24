@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import { NoteInterface } from "../models";
 import TextArea from "./TextArea";

@@ -1,11 +1,10 @@
-import React from "react";
 import { ThemeProvider } from "styled-components";
-import { themeInterface } from "./models";
+import { ThemeInterface } from "./models";
 
-const theme: themeInterface = {
+const theme: ThemeInterface = {
   colors: {
-    main: "#fff",
-    secondary: "#fff",
+    main: "hsl(180, 6%, 50%)",
+    secondary: "hsl(180, 6%, 60%)",
   },
   fontSizes: {
     small: "1em",

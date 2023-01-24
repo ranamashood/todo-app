@@ -3,7 +3,7 @@ export interface NoteInterface {
   noteDescription: string;
 }
 
-export interface themeInterface {
+export interface ThemeInterface {
   colors: {
     main: string;
     secondary: string;

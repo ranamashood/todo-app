@@ -1,6 +1,5 @@
-import React, { useState } from "react";
 import styled from "styled-components";
-import { NoteInterface } from "../../models";
+import { NoteInterface, ThemeInterface } from "../../models";
 import Button from "../Button";
 
 interface Props {
@@ -24,7 +23,8 @@ const Sidebar = (props: Props) => {
 
 const Wrapper = styled.div({
   flex: 1.5,
-  backgroundColor: "red",
+  backgroundColor: `${(theme: ThemeInterface) => theme.colors.main}`,
+  // backgroundColor: "hsl(180, 6%, 50%)",
 });
 
 export default Sidebar;
