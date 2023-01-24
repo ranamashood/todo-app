@@ -1,7 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
+import styled from "styled-components";
+import { NoteInterface } from "../../models";
+import AddNote from "../AddNote";
+import Sidebar from "./Sidebar";
 
 const Content = () => {
-  return <div>Content</div>;
+  const [notes, setNotes] = useState<NoteInterface[]>([]);
+  const [isAddNote, setIsAddNote] = useState<boolean>(false);
+
+  const toggleIsAddNote = () => {
+    setIsAddNote(!isAddNote);
+  };
+
+  return (
+    <Wrapper>
+      <Sidebar
+        notes={notes}
+        setNotes={setNotes}
+        toggleIsAddNote={toggleIsAddNote}
+      />
+      <NoteContainer>{isAddNote && <AddNote />}</NoteContainer>
+    </Wrapper>
+  );
 };
+
+const Wrapper = styled.div({
+  height: "100vh",
+  display: "flex",
+});
+
+const NoteContainer = styled.div({
+  flex: 3,
+  display: "flex",
+  backgroundColor: "blue",
+});
 
 export default Content;
