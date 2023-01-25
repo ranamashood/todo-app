@@ -36,7 +36,7 @@ const Wrapper = styled.div`
 const NoteContainer = styled.div`
   flex: 3;
   display: flex;
-  background-color: blue;
+  background-color: ${(props) => props.theme.colors.secondary};
 `;
 
 export default Content;

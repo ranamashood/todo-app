@@ -1,4 +1,4 @@
-import { ThemeInterface, ThemeProvider } from "styled-components";
+import { ThemeInterface } from "styled-components";
 
 const theme: ThemeInterface = {
   colors: {
@@ -12,8 +12,4 @@ const theme: ThemeInterface = {
   },
 };
 
-const Theme = ({ children }: any) => {
-  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
-};
-
-export default Theme;
+export { theme };

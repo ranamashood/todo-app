@@ -1,11 +1,12 @@
+import { ThemeProvider } from "styled-components";
 import Content from "./components/layout/Content";
-import Theme from "./Theme";
+import { theme } from "./theme";
 
 const App = () => {
   return (
-    <Theme>
-      <Content />
-    </Theme>
+    <ThemeProvider theme={theme}>
+      <Content />;
+    </ThemeProvider>
   );
 };
 

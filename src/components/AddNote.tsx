@@ -43,7 +43,7 @@ const Wrapper = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  background-color: green;
+  background-color: ${(props) => props.theme.colors.secondary};
 `;
 
 export default AddNote;
