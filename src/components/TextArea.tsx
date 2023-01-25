@@ -5,15 +5,20 @@ interface Props {
   onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
-const TextField = (props: Props) => {
+const TextArea = (props: Props) => {
   const { placeholder, onChange } = props;
 
-  return <Textarea placeholder={placeholder} onChange={onChange}></Textarea>;
+  return (
+    <StyledTextarea
+      placeholder={placeholder}
+      onChange={onChange}
+    ></StyledTextarea>
+  );
 };
 
-const Textarea = styled.textarea`
+const StyledTextarea = styled.textarea`
   flex: 1;
   resize: "none";
 `;
 
-export default TextField;
+export default TextArea;

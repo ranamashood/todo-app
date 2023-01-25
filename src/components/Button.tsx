@@ -9,13 +9,9 @@ interface Props {
 const Button = (props: Props) => {
   const { title, onClick } = props;
 
-  return (
-    <Wrapper>
-      <button onClick={onClick}>{title}</button>
-    </Wrapper>
-  );
+  return <StyledButton onClick={onClick}>{title}</StyledButton>;
 };
 
-const Wrapper = styled.div``;
+const StyledButton = styled.button``;
 
 export default Button;

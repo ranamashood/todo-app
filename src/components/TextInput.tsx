@@ -8,10 +8,12 @@ interface Props {
 const TextInput = (props: Props) => {
   const { placeholder, onChange } = props;
 
-  return <Input type="text" placeholder={placeholder} onChange={onChange} />;
+  return (
+    <StyledInput type="text" placeholder={placeholder} onChange={onChange} />
+  );
 };
 
-const Input = styled.input`
+const StyledInput = styled.input`
   // backgroundColor: "transparent",
 `;
 
