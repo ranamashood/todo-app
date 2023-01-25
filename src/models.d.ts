@@ -6,7 +6,7 @@ export interface NoteInterface {
 }
 
 declare module "styled-components" {
-  export interface ThemeInterface {
+  export interface DefaultTheme {
     colors: {
       primary: string;
       secondary: string;
@@ -16,5 +16,6 @@ declare module "styled-components" {
       medium: string;
       large: string;
     };
+    borderRadius: string;
   }
 }

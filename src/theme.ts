@@ -1,6 +1,6 @@
-import { ThemeInterface } from "styled-components";
+import { DefaultTheme } from "styled-components";
 
-const theme: ThemeInterface = {
+const theme: DefaultTheme = {
   colors: {
     primary: "hsl(180, 6%, 50%)",
     secondary: "hsl(180, 6%, 60%)",
@@ -10,6 +10,7 @@ const theme: ThemeInterface = {
     medium: "2em",
     large: "3em",
   },
+  borderRadius: "10px",
 };
 
 export { theme };
