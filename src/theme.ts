@@ -6,11 +6,12 @@ const theme: DefaultTheme = {
     secondary: "hsl(180, 6%, 60%)",
   },
   fontSizes: {
-    small: "1em",
-    medium: "2em",
-    large: "3em",
+    small: "1.3em",
+    medium: "1.5em",
+    large: "2em",
   },
   borderRadius: "10px",
+  padding: "8px",
 };
 
 export { theme };
