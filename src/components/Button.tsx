@@ -1,18 +1,22 @@
 import React from "react";
+import { IconType } from "react-icons";
 import styled from "styled-components";
-import { NoteAdd } from "@styled-icons/material";
 
 interface Props {
+  Icon: IconType;
   title: string;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
+  disabled?: boolean;
 }
 
 const Button = (props: Props) => {
-  const { title, onClick } = props;
+  const { Icon, title, onClick, disabled } = props;
 
   return (
-    <StyledButton onClick={onClick}>
-      <NoteAddIcon />
+    <StyledButton onClick={onClick} disabled={disabled}>
+      <IconContainer>
+        <Icon />
+      </IconContainer>
       <Span>{title}</Span>
     </StyledButton>
   );
@@ -24,8 +28,7 @@ const StyledButton = styled.button`
   border-radius: ${(props) => props.theme.borderRadius};
   display: flex;
   justify-content: center;
-  padding: 10px;
-  float: right;
+  padding: ${(props) => props.theme.padding};
 
   &:hover {
     cursor: pointer;
@@ -35,12 +38,12 @@ const StyledButton = styled.button`
   }
 `;
 
-const NoteAddIcon = styled(NoteAdd)`
-  width: ${(props) => props.theme.fontSizes.medium};
+const IconContainer = styled.div`
+  font-size: ${(props) => props.theme.fontSizes.medium};
 `;
 
 const Span = styled.span`
-  font-size: ${(props) => props.theme.fontSizes.medium};
+  font-size: ${(props) => props.theme.fontSizes.small};
   overflow: hidden;
   max-width: 0;
   white-space: nowrap;
