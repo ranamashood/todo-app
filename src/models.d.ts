@@ -17,5 +17,6 @@ declare module "styled-components" {
       large: string;
     };
     borderRadius: string;
+    padding: string;
   }
 }
