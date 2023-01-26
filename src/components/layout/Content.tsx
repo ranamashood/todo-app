@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import { NoteInterface } from "../../models";
 import AddNote from "../AddNote";
+import Menubar from "./Menubar";
 import Sidebar from "./Sidebar";
 
 const Content = () => {
@@ -18,18 +19,23 @@ const Content = () => {
 
   return (
     <Wrapper>
-      <Sidebar
-        notes={notes}
-        setNotes={setNotes}
-        toggleIsAddNote={toggleIsAddNote}
-      />
-      <NoteContainer>{isAddNote && <AddNote />}</NoteContainer>
+      <Menubar isAddNote={isAddNote} toggleIsAddNote={toggleIsAddNote} />
+      <MainContent>
+        <Sidebar notes={notes} setNotes={setNotes} />
+        <NoteContainer>{isAddNote && <AddNote />}</NoteContainer>
+      </MainContent>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
+
+const MainContent = styled.div`
+  flex: 1;
   display: flex;
 `;
 

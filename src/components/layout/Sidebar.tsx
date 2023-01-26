@@ -1,19 +1,16 @@
 import styled from "styled-components";
 import { NoteInterface } from "../../models";
-import Button from "../Button";
 
 interface Props {
   notes: NoteInterface[];
   setNotes: React.Dispatch<React.SetStateAction<NoteInterface[]>>;
-  toggleIsAddNote: () => void;
 }
 
 const Sidebar = (props: Props) => {
-  const { notes, setNotes, toggleIsAddNote } = props;
+  const { notes, setNotes } = props;
 
   return (
     <Wrapper>
-      <Button onClick={toggleIsAddNote} title="Add Note" />
       {notes.map((note, key) => {
         return <div key={key}>{note.title}</div>;
       })}
