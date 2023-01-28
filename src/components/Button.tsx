@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { IconType } from "react-icons";
 import styled from "styled-components";
 
@@ -9,11 +9,32 @@ interface Props {
   disabled?: boolean;
 }
 
+interface StyledProps {
+  readonly displayType: string;
+}
+
 const Button = (props: Props) => {
   const { Icon, title, onClick, disabled } = props;
+  const [displayType, setDisplayType] = useState<string>(
+    disabled ? "flex" : "none"
+  );
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (displayType === "none") {
+        setDisplayType("flex");
+      } else {
+        setDisplayType("none");
+      }
+    }, 100);
+  }, [disabled]);
 
   return (
-    <StyledButton onClick={onClick} disabled={disabled}>
+    <StyledButton
+      onClick={onClick}
+      disabled={disabled}
+      displayType={displayType}
+    >
       <IconContainer>
         <Icon />
       </IconContainer>
@@ -22,13 +43,19 @@ const Button = (props: Props) => {
   );
 };
 
-const StyledButton = styled.button`
+const StyledButton = styled.button<StyledProps>`
   border: none;
   outline: none;
   border-radius: ${(props) => props.theme.borderRadius};
-  display: flex;
+  display: ${(props) => props.displayType};
   justify-content: center;
   padding: ${(props) => props.theme.padding};
+  scale: 1;
+  transition: scale ${(props) => props.theme.transitionDuration.short};
+
+  &:disabled {
+    scale: 0;
+  }
 
   &:hover {
     cursor: pointer;
@@ -47,7 +74,7 @@ const Span = styled.span`
   overflow: hidden;
   max-width: 0;
   white-space: nowrap;
-  transition: max-width 500ms;
+  transition: max-width ${(props) => props.theme.transitionDuration.normal};
 `;
 
 export default Button;
