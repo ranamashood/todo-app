@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { NoteInterface } from "../../models";
 import AddNote from "../AddNote";
@@ -8,21 +8,37 @@ import Sidebar from "./Sidebar";
 const Content = () => {
   const [notes, setNotes] = useState<NoteInterface[]>([]);
   const [isAddNote, setIsAddNote] = useState<boolean>(false);
+  const [newNote, setNewNote] = useState<NoteInterface>({
+    title: "",
+    noteDescription: "",
+  });
 
   const toggleIsAddNote = () => {
     setIsAddNote(!isAddNote);
   };
 
   const addNoteHandler = () => {
-    setNotes([{ title: "hello", noteDescription: "note" }, ...notes]);
+    if (newNote.title !== "") {
+      setNotes([...notes, newNote]);
+    }
   };
+
+  useEffect(() => {
+    setNewNote({ title: "", noteDescription: "" });
+  }, [notes]);
 
   return (
     <Wrapper>
-      <Menubar isAddNote={isAddNote} toggleIsAddNote={toggleIsAddNote} />
+      <Menubar
+        addNoteHandler={addNoteHandler}
+        isAddNote={isAddNote}
+        toggleIsAddNote={toggleIsAddNote}
+      />
       <MainContent>
-        <Sidebar notes={notes} setNotes={setNotes} />
-        <NoteContainer>{isAddNote && <AddNote />}</NoteContainer>
+        <Sidebar notes={notes} />
+        <NoteContainer>
+          {isAddNote && <AddNote newNote={newNote} setNewNote={setNewNote} />}
+        </NoteContainer>
       </MainContent>
     </Wrapper>
   );

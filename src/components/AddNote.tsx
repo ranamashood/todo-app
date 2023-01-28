@@ -1,14 +1,15 @@
-import { useState } from "react";
 import styled from "styled-components";
 import { NoteInterface } from "../models";
 import TextArea from "./TextArea";
 import TextInput from "./TextInput";
 
-const AddNote = () => {
-  const [newNote, setNewNote] = useState<NoteInterface>({
-    title: "",
-    noteDescription: "",
-  });
+interface Props {
+  readonly newNote: NoteInterface;
+  setNewNote: React.Dispatch<React.SetStateAction<NoteInterface>>;
+}
+
+const AddNote = (props: Props) => {
+  const { newNote, setNewNote } = props;
 
   const titleHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     setNewNote({

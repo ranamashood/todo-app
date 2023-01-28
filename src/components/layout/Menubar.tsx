@@ -5,10 +5,11 @@ import Button from "../Button";
 interface Props {
   readonly isAddNote: boolean;
   toggleIsAddNote: () => void;
+  addNoteHandler: () => void;
 }
 
 const Menubar = (props: Props) => {
-  const { isAddNote, toggleIsAddNote } = props;
+  const { isAddNote, toggleIsAddNote, addNoteHandler } = props;
 
   return (
     <Wrapper>
@@ -19,7 +20,10 @@ const Menubar = (props: Props) => {
         disabled={isAddNote}
       />
       <Button
-        onClick={toggleIsAddNote}
+        onClick={() => {
+          toggleIsAddNote();
+          addNoteHandler();
+        }}
         title="Save Note"
         Icon={MdCheckCircle}
         disabled={!isAddNote}

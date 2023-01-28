@@ -2,12 +2,11 @@ import styled from "styled-components";
 import { NoteInterface } from "../../models";
 
 interface Props {
-  notes: NoteInterface[];
-  setNotes: React.Dispatch<React.SetStateAction<NoteInterface[]>>;
+  readonly notes: NoteInterface[];
 }
 
 const Sidebar = (props: Props) => {
-  const { notes, setNotes } = props;
+  const { notes } = props;
 
   return (
     <Wrapper>
