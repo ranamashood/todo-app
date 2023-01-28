@@ -1,4 +1,4 @@
-import { MdAddCircle, MdCheckBox, MdNoteAdd, MdSaveAlt } from "react-icons/md";
+import { MdAddCircle, MdCancel, MdCheckCircle } from "react-icons/md";
 import styled from "styled-components";
 import Button from "../Button";
 
@@ -21,14 +21,14 @@ const Menubar = (props: Props) => {
       <Button
         onClick={toggleIsAddNote}
         title="Save Note"
-        Icon={MdCheckBox}
-        disabled={isAddNote}
+        Icon={MdCheckCircle}
+        disabled={!isAddNote}
       />
       <Button
         onClick={toggleIsAddNote}
         title="Cancel"
-        Icon={MdNoteAdd}
-        disabled={isAddNote}
+        Icon={MdCancel}
+        disabled={!isAddNote}
       />
     </Wrapper>
   );
