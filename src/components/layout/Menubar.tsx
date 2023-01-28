@@ -5,7 +5,7 @@ import Button from "../Button";
 interface Props {
   readonly isAddNote: boolean;
   toggleIsAddNote: () => void;
-  addNoteHandler: () => void;
+  addNoteHandler: () => boolean;
 }
 
 const Menubar = (props: Props) => {
@@ -21,8 +21,7 @@ const Menubar = (props: Props) => {
       />
       <Button
         onClick={() => {
-          toggleIsAddNote();
-          addNoteHandler();
+          addNoteHandler() && toggleIsAddNote();
         }}
         title="Save Note"
         Icon={MdCheckCircle}
