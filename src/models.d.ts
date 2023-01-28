@@ -16,6 +16,11 @@ declare module "styled-components" {
       medium: string;
       large: string;
     };
+    transitionDuration: {
+      short: string;
+      normal: string;
+      long: string;
+    };
     borderRadius: string;
     padding: string;
   }
