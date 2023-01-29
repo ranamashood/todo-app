@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { NoteInterface } from "../../models";
 import AddNote from "../AddNote";
 import Notify from "../Notify";
@@ -15,6 +15,7 @@ const Content = () => {
     title: "",
     noteDescription: "",
   });
+  const theme = useTheme();
 
   const toggleIsAddNote = () => {
     setIsAddNote(!isAddNote);
@@ -32,9 +33,17 @@ const Content = () => {
 
   useEffect(() => {
     if (notify) {
-      setIsNotify(!isNotify);
+      setIsNotify(true);
     }
   }, [notify]);
+
+  useEffect(() => {
+    if (!isNotify) {
+      setTimeout(() => {
+        setNotify("");
+      }, parseInt(theme.transitionDuration.long));
+    }
+  }, [isNotify]);
 
   useEffect(() => {
     setNewNote({ title: "", noteDescription: "" });
@@ -48,6 +57,7 @@ const Content = () => {
         addNoteHandler={addNoteHandler}
         isAddNote={isAddNote}
         toggleIsAddNote={toggleIsAddNote}
+        notify={notify}
       />
       <MainContent>
         <Sidebar notes={notes} />

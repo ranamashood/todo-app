@@ -6,10 +6,11 @@ interface Props {
   readonly isAddNote: boolean;
   toggleIsAddNote: () => void;
   addNoteHandler: () => boolean;
+  readonly notify: string;
 }
 
 const Menubar = (props: Props) => {
-  const { isAddNote, toggleIsAddNote, addNoteHandler } = props;
+  const { isAddNote, toggleIsAddNote, addNoteHandler, notify } = props;
 
   return (
     <Wrapper>
@@ -21,7 +22,7 @@ const Menubar = (props: Props) => {
       />
       <Button
         onClick={() => {
-          addNoteHandler() && toggleIsAddNote();
+          !notify && addNoteHandler() && toggleIsAddNote();
         }}
         title="Save Note"
         Icon={MdCheckCircle}
