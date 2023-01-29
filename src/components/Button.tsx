@@ -10,7 +10,7 @@ interface Props {
 }
 
 interface StyledProps {
-  readonly displayType: string;
+  displayType: string;
 }
 
 const Button = (props: Props) => {

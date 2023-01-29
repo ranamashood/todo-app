@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { NoteInterface } from "../../models";
 
 interface Props {
-  readonly notes: NoteInterface[];
+  notes: NoteInterface[];
 }
 
 const Sidebar = (props: Props) => {

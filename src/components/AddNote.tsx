@@ -4,7 +4,7 @@ import TextArea from "./TextArea";
 import TextInput from "./TextInput";
 
 interface Props {
-  readonly newNote: NoteInterface;
+  newNote: NoteInterface;
   setNewNote: React.Dispatch<React.SetStateAction<NoteInterface>>;
 }
 

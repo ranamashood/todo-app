@@ -3,10 +3,10 @@ import styled from "styled-components";
 import Button from "../Button";
 
 interface Props {
-  readonly isAddNote: boolean;
+  isAddNote: boolean;
   toggleIsAddNote: () => void;
   addNoteHandler: () => boolean;
-  readonly notify: string;
+  notify: string;
 }
 
 const Menubar = (props: Props) => {

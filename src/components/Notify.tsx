@@ -1,13 +1,13 @@
 import styled, { useTheme } from "styled-components";
 
 interface Props {
-  readonly notify: string;
-  readonly isNotify: boolean;
+  notify: string;
+  isNotify: boolean;
   setIsNotify: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 interface StyledProps {
-  readonly isNotify: boolean;
+  isNotify: boolean;
 }
 
 const Notify = (props: Props) => {
