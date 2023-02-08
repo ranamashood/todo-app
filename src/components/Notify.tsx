@@ -37,7 +37,8 @@ const Wrapper = styled.div<StyledProps>`
   background-color: ${(props) => props.theme.colors.primary};
   padding: 10px 20px;
   border-radius: 10px;
-  transition: transform ${(props) => props.theme.transitionDuration.long};
+  transition: transform ${(props) => props.theme.transitionDuration.long}
+    cubic-bezier(0.68, -0.55, 0.265, 1.55);
 `;
 
 export default Notify;
