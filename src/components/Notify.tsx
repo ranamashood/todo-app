@@ -16,7 +16,9 @@ const Notify = (props: Props) => {
 
   const transitionEndHandler = () => {
     setTimeout(() => {
-      setIsNotify(false);
+      if (notify) {
+        setIsNotify(false);
+      }
     }, parseInt(theme.transitionDuration.long));
   };
 

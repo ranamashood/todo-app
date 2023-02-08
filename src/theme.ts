@@ -13,7 +13,7 @@ const theme: DefaultTheme = {
   transitionDuration: {
     short: "300ms",
     normal: "500ms",
-    long: "750ms",
+    long: "2000ms",
   },
   borderRadius: "10px",
   padding: "8px",
